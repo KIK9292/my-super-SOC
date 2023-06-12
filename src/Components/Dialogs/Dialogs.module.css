@@ -1,0 +1,13 @@
+.dialogWrapper {
+    display: grid;
+    grid-template-rows: 1fr 100px ;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas:
+"n m"
+"n i";
+}
+
+.addMessageArea{
+    grid-area: i;
+    height: auto;
+}

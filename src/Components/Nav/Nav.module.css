@@ -1,0 +1,33 @@
+.nav {
+    grid-area: n;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    background-color: #2a917f;
+    gap:20px
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #14559d;
+    text-decoration: none;
+    padding: 0 15px;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    color: #5181b8;
+    border-bottom-color: #5181b8;
+}
+
+.active {
+    color: #5181b8;
+    border-bottom-color: #5181b8;
+}
