@@ -11,7 +11,7 @@ export const Posts = (props:PostsProsType) => {
     return (
         <div>{props.posts.map(el=>{
             return (
-                <div>{el.title}{el.likesValue}</div>
+                <div key={el.id}>{el.title}{el.likesValue}</div>
             )
         })}</div>
     );

@@ -9,6 +9,7 @@ export type DialogType = {
 export type DialogsType = {
     dialogs: DialogType[]
     messages: MessageType[]
+    messageValue:string
 
 }
 export type PostType = {
@@ -18,6 +19,7 @@ export type PostType = {
 }
 export type ProfileType = {
     posts: PostType[]
+    postValue:string
 }
 export type StateType = {
     Profile: ProfileType
@@ -25,4 +27,11 @@ export type StateType = {
 }
 export type StoreType = {
     State: StateType
+    changeInputPostValue:(value:string)=>void
+    rerenderTree:()=>void
+    subscribe:(callback:()=>void)=> void
+    addPost:()=>void
+    changeInputMessageValue:(value:string)=>void
+    addMessage:()=>void
+
 }

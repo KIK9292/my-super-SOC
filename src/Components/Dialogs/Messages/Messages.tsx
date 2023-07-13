@@ -11,7 +11,7 @@ export const Messages = (props:MessagesPropsType) => {
         <div className={s.messages}>
             {props.messages.map(el=>{
                 return(
-                    <div>{el.message}</div>
+                    <div key={el.id}>{el.message}</div>
                 )
             })}
         </div>

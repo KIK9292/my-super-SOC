@@ -1,22 +1,22 @@
 import React from 'react';
-import {v1} from "uuid";
 import {Posts} from "./Posts/Posts";
-import {PostType} from "../Types/Types";
+import {AddPostArea} from "./AddPostArea/AddPostArea";
+import {ProfilePropsType} from "./ProfileContainer";
 
 
-export type ProfilePostType={
-    posts:PostType[]
-}
-
-export const Profile = (props:ProfilePostType) => {
+export const Profile = (props:ProfilePropsType) => {
 
     return (
         <div>
             <br/>
             <div>Profile</div>
             <div>ava+desc</div>
-            <div>input+button</div>
-            <Posts posts={props.posts}/>
+            <AddPostArea
+                changeInputPostValue={props.changeInputPostValue}
+            inputValue={props.profile.postValue}
+            addPost={props.addPost}
+            />
+            <Posts posts={props.profile.posts}/>
             <br/>
         </div>
     );
