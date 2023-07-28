@@ -17,7 +17,9 @@ export const Nav = () => {
             <NavLink to='/settings' className={s.item}>
                 Settings
             </NavLink>
-
+            <NavLink to='/friends' className={s.item}>
+                Friends
+            </NavLink>
         </div>
     );
 };
