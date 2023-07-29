@@ -1,6 +1,7 @@
 .cardsFriends{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+
 }
 .cardFriends{
     margin: 20px;
@@ -14,5 +15,5 @@
 }
 .cardFriendsImg{
     border-radius: 15px;
-    max-width: 290px
+    max-width: 180px;
 }
