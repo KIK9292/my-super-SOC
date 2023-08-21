@@ -1,3 +1,6 @@
+import {Dispatch} from "redux";
+import axios from "axios";
+
 export type InitialFriends = {
     friends: UserItemsResponseType[]
     preloaderStatus: boolean
@@ -55,13 +58,16 @@ export const friendsReducer = (state: InitialFriends = InitialFriends, action: R
         case "SET-CURRENT-PAGE":{
             return {...state,currentPage:action.payload.newPage}
         }
+        case "NEW-STATUS-SUBSCRIBE":{
+            return {...state,friends:state.friends.map(el=>el.id===action.payload.idFriend?{...el, followed:action.payload.newStatus}:el)}
+        }
         default:
             return state
     }
 }
 type RootFriendsType = NewStatusSubscribeACType | SetFriendsForApiACType | TogglePreloaderACType|SetCurrentPageACType
 export type NewStatusSubscribeACType = ReturnType<typeof newStatusSubscribeAC>
-export const newStatusSubscribeAC = (idFriend: string, newStatus: boolean) => {
+export const newStatusSubscribeAC = (idFriend: number, newStatus: boolean) => {
     return {
         type: "NEW-STATUS-SUBSCRIBE",
         payload: {idFriend, newStatus}
@@ -86,4 +92,11 @@ export const setCurrentPageAC=(newPage:number)=>{
         type:'SET-CURRENT-PAGE',
         payload:{newPage}
     }as const
+}
+
+
+export const newStatusSubscribeTC=(idFriend: number, newStatus: boolean)=>(dispatch:Dispatch)=>{
+    return {
+        axios.put().then(()=>{}))
+    }
 }
